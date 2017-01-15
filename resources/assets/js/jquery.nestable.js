@@ -132,12 +132,12 @@
             }
 
         },
-        reinit: function() {
+        reinit: function () {
             // alias
             var list = this;
 
             // remove expand/collapse controls
-            $.each(this.el.find(this.options.itemNodeName), function(k, el) {
+            $.each(this.el.find(this.options.itemNodeName), function (k, el) {
                 list.expandItem($(el));
 
                 // if has <ol> child - remove previously prepended buttons
@@ -596,11 +596,11 @@
                         callback: function (ok) {
                             if (ok) {
                                 $.post(_options.url.delete.replace('__ID__', data['item_id']),
-                                   {_token: _options.csrf_token, _method: 'delete'},
-                                   function (message) {
-                                       $.fn.mbHelpers.showMessage(message.type, message.content);
-                                       that.reload();
-                                   }, 'json'
+                                    {_token: _options.csrf_token, _method: 'delete'},
+                                    function (message) {
+                                        $.fn.mbHelpers.showMessage(message.type, message.content);
+                                        that.reload();
+                                    }, 'json'
                                 );
                             }
                         }

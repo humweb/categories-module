@@ -3,7 +3,8 @@
     {!! Form::model($category,['class' => '','url' => $url, 'method' => $method]) !!}
     <div class="panel panel-default">
         <div class="panel-heading">
-            New Category <div class="pull-right">Parent <span class="label label-default">{{ $parentName }}</span></div>
+            New Category
+            <div class="pull-right">Parent <span class="label label-default">{{ $parentName }}</span></div>
         </div>
         <div class="panel-body">
 

@@ -12,27 +12,27 @@ $router->group([
 
     // Create
     $router->get('create/{parent?}', [
-        'as' => 'get.create',
+        'as'   => 'get.create',
         'uses' => 'CategoryController@getCreate',
     ]);
     $router->post('create/{parent?}', [
-        'as' => 'post.create',
+        'as'   => 'post.create',
         'uses' => 'CategoryController@postCreate',
     ]);
 
     // Update
     $router->get('update/{id}', [
-        'as' => 'get.update',
+        'as'   => 'get.update',
         'uses' => 'CategoryController@getUpdate',
     ]);
     $router->post('update/{id}', [
-        'as' => 'post.update',
+        'as'   => 'post.update',
         'uses' => 'CategoryController@postUpdate',
     ]);
 
     // Delete
     $router->any('delete/{id}', [
-        'as' => 'get.delete',
+        'as'   => 'get.delete',
         'uses' => 'CategoryController@getDelete',
     ]);
 
@@ -41,6 +41,4 @@ $router->group([
         'as'   => 'move',
         'uses' => 'CategoryController@postMove'
     ]);
-
-
 });
