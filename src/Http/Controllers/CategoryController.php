@@ -2,7 +2,7 @@
 namespace Humweb\Categories\Http\Controllers;
 
 use Humweb\Categories\Category;
-use Humweb\Categories\Category;
+
 use Humweb\Categories\CategoryRequest;
 use Humweb\Categories\Presenter\AdminPresenter;
 use Humweb\Core\Http\Controllers\Controller;

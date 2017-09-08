@@ -1,7 +1,7 @@
 @extends('layouts.master')
 @section('content')
-    <div class="panel panel-default panel-nestable panel-sidebar">
-        <div class="panel-heading">
+    <div class="card card-default card-nestable card-sidebar">
+        <div class="card-header">
             <div class="loading hidden"></div>
             <a href="{{route('admin.category.create')}}"
                class="modal-link btn btn-success btn-xs"
@@ -19,7 +19,7 @@
                 </a>
             </div>
         </div>
-        <div class="panel-body">
+        <div class="card-body">
             <div id="nestable-container" class="dd"><h3>Yeahh!</h3>{!! $tree !!}</div>
         </div>
     </div>
@@ -28,7 +28,7 @@
 @section('footer_scripts')
     <script type="text/javascript">
         $(document).ready(function () {
-            $('.panel-nestable').mbNestable({
+            $('.card-nestable').mbNestable({
                 url: {
                     data: '{{route('admin.category.data')}}',
                     move: '{{route('admin.category.move')}}',

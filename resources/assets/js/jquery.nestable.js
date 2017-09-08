@@ -590,7 +590,7 @@
                         message: "<div class=\"message-delete\"><div class=\"confirm\">" + _options.trans.delete_confirm + ' ' + _options.trans.name + ":</div><div class=\"title\">" + data['item_title'] + "</div>",
                         title: _options.trans.delete + ' ' + _options.trans.name + '?',
                         buttons: {
-                            cancel: {label: _options.trans.cancel, className: "btn-default btn-white"},
+                            cancel: {label: _options.trans.cancel, className: "btn-secondary btn-white"},
                             confirm: {label: _options.trans.ok, className: "btn-danger"}
                         },
                         callback: function (ok) {

@@ -1,12 +1,12 @@
 @extends('layouts.master')
 @section('content')
     {!! Form::model($category,['class' => '','url' => $url, 'method' => $method]) !!}
-    <div class="panel panel-default">
-        <div class="panel-heading">
+    <div class="card card-default">
+        <div class="card-header">
             New Category
             <div class="pull-right">Parent <span class="label label-default">{{ $parentName }}</span></div>
         </div>
-        <div class="panel-body">
+        <div class="card-body">
 
             <div class="form-group">
                 {!! Form::label('label', 'Title', ['class' => 'control-label']) !!}
@@ -17,7 +17,7 @@
                 {!! Form::text('slug', null, ['class' => 'form-control', 'id' => 'slug']) !!}
             </div>
         </div>
-        <div class="panel-footer">
+        <div class="card-footer">
             <button type="submit" class="btn btn-primary">Save</button>
         </div>
     </div>

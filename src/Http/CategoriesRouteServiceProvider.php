@@ -27,7 +27,7 @@ class CategoriesRouteServiceProvider extends ServiceProvider
     public function map(Router $router)
     {
         $router->group(['namespace' => $this->namespace, 'middleware' => 'web'], function ($router) {
-            require base_path('Humweb/Categories/Http/routes.php');
+            require __DIR__.'/routes.php';
         });
     }
 }
