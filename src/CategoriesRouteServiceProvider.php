@@ -1,6 +1,6 @@
 <?php
 
-namespace Humweb\Categories\Http;
+namespace Humweb\Categories;
 
 use Illuminate\Foundation\Support\Providers\RouteServiceProvider as ServiceProvider;
 use Illuminate\Routing\Router;
@@ -27,7 +27,7 @@ class CategoriesRouteServiceProvider extends ServiceProvider
     public function map(Router $router)
     {
         $router->group(['namespace' => $this->namespace, 'middleware' => 'web'], function ($router) {
-            require __DIR__.'/routes.php';
+            require __DIR__.'/Http/routes.php';
         });
     }
 }
