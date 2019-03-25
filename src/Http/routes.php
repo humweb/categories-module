@@ -1,6 +1,6 @@
 <?php
 $router->group([
-    'prefix' => 'admin/category',
+    'prefix' => 'admin/categories',
     'as'     => 'admin.category.'
 ], function ($router) {
 
@@ -11,11 +11,11 @@ $router->group([
     ]);
 
     // Create
-    $router->get('create/{parent?}', [
+    $router->get('create', [
         'as'   => 'get.create',
         'uses' => 'CategoryController@getCreate',
     ]);
-    $router->post('create/{parent?}', [
+    $router->post('create', [
         'as'   => 'post.create',
         'uses' => 'CategoryController@postCreate',
     ]);
@@ -36,9 +36,4 @@ $router->group([
         'uses' => 'CategoryController@getDelete',
     ]);
 
-    // Move / Reorder
-    $router->post('move', [
-        'as'   => 'move',
-        'uses' => 'CategoryController@postMove'
-    ]);
 });
