@@ -2,10 +2,13 @@
 
 namespace Humweb\Categories;
 
+use Humweb\Core\Data\Traits\SluggableTrait;
 use Illuminate\Database\Eloquent\Model;
 
 class Category extends Model
 {
+    use SluggableTrait;
+
     /**
      * The attributes that aren't mass assignable.
      *
@@ -17,6 +20,18 @@ class Category extends Model
         'updated_at',
     ];
 
+
+    public function __construct(array $attributes = [])
+    {
+        parent::__construct($attributes);
+
+        $this->slugOptions = [
+            'maxlen'     => 200,
+            'unique'     => true,
+            'slug_field' => 'slug',
+            'from_field' => 'title',
+        ];
+    }
 
     /**
      * Get all of the relations that are assigned this category.

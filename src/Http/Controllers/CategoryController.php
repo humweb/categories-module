@@ -48,8 +48,7 @@ class CategoryController extends AdminController
     public function postCreate(CategoryRequest $request)
     {
         Category::create([
-            'title' => $request->title,
-            'slug'  => str_slug($request->title),
+            'title' => $request->title
         ]);
         return redirect()->route('admin.categories.get.index')->with('success', 'Created category.');
     }
@@ -96,8 +95,7 @@ class CategoryController extends AdminController
     {
         $category = Category::find($id);
         $category->fill([
-            'title' => $request->title,
-            'slug'  => str_slug($request->title),
+            'title' => $request->title
         ]);
         $category->save();
 

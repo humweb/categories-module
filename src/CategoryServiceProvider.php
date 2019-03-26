@@ -4,7 +4,7 @@ namespace Humweb\Categories;
 
 use Illuminate\Support\ServiceProvider;
 
-class CategoriesServiceProvider extends ServiceProvider
+class CategoryServiceProvider extends ServiceProvider
 {
     /**
      * Bootstrap any application services.
