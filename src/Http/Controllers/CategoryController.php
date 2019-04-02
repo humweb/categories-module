@@ -4,6 +4,7 @@ namespace Humweb\Categories\Http\Controllers;
 use Humweb\Categories\Category;
 use Humweb\Categories\CategoryRequest;
 use Humweb\Core\Http\Controllers\AdminController;
+use Illuminate\Http\Request;
 
 class CategoryController extends AdminController
 {
@@ -11,8 +12,10 @@ class CategoryController extends AdminController
     protected $request;
 
 
-    public function getIndex($type = null)
+    public function getIndex(Request $request, $type = null)
     {
+        $this->crumb('Categories', '/admin/categories');
+        $this->viewShare('name', 'Categories Manager');
         $categories = Category::all();
 
         return $this->setContent('categories::index', compact('categories'));
@@ -48,9 +51,9 @@ class CategoryController extends AdminController
     public function postCreate(CategoryRequest $request)
     {
         Category::create([
-            'title' => $request->title
+            'name' => $request->name
         ]);
-        return redirect()->route('admin.categories.get.index')->with('success', 'Created category.');
+        return redirect()->route('admin.category.get.index')->with('success', 'Created category.');
     }
 
 
@@ -72,13 +75,13 @@ class CategoryController extends AdminController
      *
      * @return \Illuminate\View\View
      */
-    public function getEdit($id)
+    public function getUpdate($id)
     {
         $category = Category::find($id);
 
         return $this->setContent('categories::form', [
             'action'   => 'edit',
-            'url'      => route('admin.category.post.update'),
+            'url'      => route('admin.category.post.update', [$category->id]),
             'category' => $category,
         ]);
     }
@@ -91,15 +94,15 @@ class CategoryController extends AdminController
      *
      * @return \Illuminate\View\View
      */
-    public function postEdit(CategoryRequest $request, $id)
+    public function postUpdate(CategoryRequest $request, $id)
     {
         $category = Category::find($id);
         $category->fill([
-            'title' => $request->title
+            'name' => $request->name
         ]);
         $category->save();
 
-        return redirect()->route('admin.categories.get.index')->with('success', 'Category updated.');
+        return redirect()->route('admin.category.get.index')->with('success', 'Category updated.');
     }
 
     /**
@@ -114,7 +117,7 @@ class CategoryController extends AdminController
     {
         $category->delete();
 
-        return redirect()->route('admin.categories.get.index')->with('success', 'Category deleted.');
+        return redirect()->route('admin.category.get.index')->with('success', 'Category deleted.');
     }
 
 }

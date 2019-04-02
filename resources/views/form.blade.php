@@ -1,4 +1,3 @@
-@extends('layouts.master')
 @section('content')
     {!! Form::model($category, ['class' => '','url' => $url, 'method' => 'post']) !!}
     <div class="card card-default">
@@ -9,7 +8,7 @@
 
             <div class="form-group">
                 {!! Form::label('label', 'Title', ['class' => 'control-label']) !!}
-                {!! Form::text('title', null, ['class' => 'has-slug form-control','data-slug_target' => "#slug"]) !!}
+                {!! Form::text('name', null, ['class' => 'has-slug form-control','data-slug_target' => "#slug"]) !!}
             </div>
         </div>
         <div class="card-footer">

@@ -29,7 +29,7 @@ class Category extends Model
             'maxlen'     => 200,
             'unique'     => true,
             'slug_field' => 'slug',
-            'from_field' => 'title',
+            'from_field' => 'name',
         ];
     }
 
